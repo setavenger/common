@@ -22,7 +22,6 @@ func init() {
 
 	if Environment != "production" {
 		output := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: time.RFC3339}
-		L = zerolog.New(output).With().Timestamp().Logger()
-
+		L = zerolog.New(output).With().Caller().Timestamp().Logger()
 	}
 }
