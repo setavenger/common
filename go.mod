@@ -1,6 +1,6 @@
 module github.com/setavenger/common
 
-go 1.22.4
+go 1.17
 
 require github.com/rs/zerolog v1.33.0
 
