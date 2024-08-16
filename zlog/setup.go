@@ -14,7 +14,6 @@ var (
 )
 
 func init() {
-
 	if val := os.Getenv("ENVIRONMENT"); val != "" {
 		Environment = val
 	}
@@ -24,4 +23,8 @@ func init() {
 		output := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: time.RFC3339}
 		L = zerolog.New(output).With().Caller().Timestamp().Logger()
 	}
+}
+
+func SetToJson() {
+	L = zerolog.New(os.Stdout).With().Caller().Timestamp().Logger()
 }
